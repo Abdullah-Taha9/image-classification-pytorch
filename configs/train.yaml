@@ -1,0 +1,15 @@
+input_type: "image"
+dataset_name: "HAM1000"
+model:
+  encoder: 'resnet18'
+  optimizer:
+    name: Adam
+    lr: 0.0003
+    weight_decay: 3e-4
+  freeze_base: True
+
+dataset:
+  root_path: ""
+
+batch_size: 32
+seed: 42
