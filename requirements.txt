@@ -1,0 +1,13 @@
+omegaconf
+hydra-core
+pytorch-lightning
+timm
+torchmetrics
+reportlab
+scikit-learn
+pandas
+tensorboard
+matplotlib
+numpy==1.22.4
+scipy
+kagglehub
