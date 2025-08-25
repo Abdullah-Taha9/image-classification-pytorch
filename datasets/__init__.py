@@ -1,0 +1,25 @@
+from typing import List
+from torch.utils.data import Dataset
+from .image_dataset import CustomDataset
+
+
+__dataset_mapper__ = {
+    "HAM1000": CustomDataset,
+}
+
+
+def list_datasets() -> List[str]:
+    """
+    Returns a list of available dataset names.
+    """
+    return sorted(__dataset_mapper__.keys())
+
+
+def get_dataset_by_name(dataset: str, *args, **kwargs) -> Dataset:
+    """
+    Returns the Dataset class using the given name and arguments.
+    """
+    assert dataset in __dataset_mapper__, (
+        f"Dataset '{dataset}' not found in the mapper."
+    )
+    return __dataset_mapper__[dataset](*args, **kwargs)
